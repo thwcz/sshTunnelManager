@@ -1,6 +1,6 @@
 .github
 .gradle
-.build
-.conf
+build
+conf
 docs
 SESSION-RESUME.md
