@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConnectionDialog.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sshTunnelManager</a> &gt; <a href="index.source.html" class="el_package">com.sshmanager.ui</a> &gt; <span class="el_source">ConnectionDialog.java</span></div><h1>ConnectionDialog.java</h1><pre class="source lang-java linenums">package com.sshmanager.ui;
+
+import javax.swing.*;
+import java.awt.*;
+import com.sshmanager.model.Connection;
+
+public class ConnectionDialog extends JDialog {
+    private JTextField nameField;
+    private JTextField hostField;
+    private JTextField portField;
+    private JCheckBox favoriteBox;
+    private JButton okButton;
+    private JButton cancelButton;
+<span class="nc" id="L14">    private boolean confirmed = false;</span>
+
+    public ConnectionDialog(Frame owner) {
+<span class="nc" id="L17">        super(owner, &quot;Add/Edit Connection&quot;, true);</span>
+<span class="nc" id="L18">        setLayout(new GridLayout(5, 2, 5, 5));</span>
+<span class="nc" id="L19">        setSize(400, 250);</span>
+<span class="nc" id="L20">        setLocationRelativeTo(owner);</span>
+
+<span class="nc" id="L22">        add(new JLabel(&quot;Name:&quot;));</span>
+<span class="nc" id="L23">        nameField = new JTextField();</span>
+<span class="nc" id="L24">        add(nameField);</span>
+
+<span class="nc" id="L26">        add(new JLabel(&quot;Host:&quot;));</span>
+<span class="nc" id="L27">        hostField = new JTextField();</span>
+<span class="nc" id="L28">        add(hostField);</span>
+
+<span class="nc" id="L30">        add(new JLabel(&quot;Port:&quot;));</span>
+<span class="nc" id="L31">        portField = new JTextField();</span>
+<span class="nc" id="L32">        add(portField);</span>
+
+<span class="nc" id="L34">        add(new JLabel(&quot;Favorite:&quot;));</span>
+<span class="nc" id="L35">        favoriteBox = new JCheckBox();</span>
+<span class="nc" id="L36">        add(favoriteBox);</span>
+
+<span class="nc" id="L38">        okButton = new JButton(&quot;OK&quot;);</span>
+<span class="nc" id="L39">        cancelButton = new JButton(&quot;Cancel&quot;);</span>
+<span class="nc" id="L40">        add(okButton);</span>
+<span class="nc" id="L41">        add(cancelButton);</span>
+
+<span class="nc" id="L43">        okButton.addActionListener(e -&gt; {</span>
+<span class="nc" id="L44">            confirmed = true;</span>
+<span class="nc" id="L45">            setVisible(false);</span>
+<span class="nc" id="L46">        });</span>
+<span class="nc" id="L47">        cancelButton.addActionListener(e -&gt; setVisible(false));</span>
+<span class="nc" id="L48">    }</span>
+
+    public boolean isConfirmed() {
+<span class="nc" id="L51">        return confirmed;</span>
+    }
+
+    public String getConnectionName() {
+<span class="nc" id="L55">        return nameField.getText();</span>
+    }
+
+    public String getHost() {
+<span class="nc" id="L59">        return hostField.getText();</span>
+    }
+
+    public int getPort() {
+        try {
+<span class="nc" id="L64">            return Integer.parseInt(portField.getText());</span>
+<span class="nc" id="L65">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L66">            return -1;</span>
+        }
+    }
+
+    public boolean isFavorite() {
+<span class="nc" id="L71">        return favoriteBox.isSelected();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

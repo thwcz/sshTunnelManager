@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sshmanager.model.ModelValidatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-03-26T11:00:26.879Z" hostname="CH4WJX3" time="0.034">
+  <properties/>
+  <testcase name="testValidFolderAndConnection()" classname="com.sshmanager.model.ModelValidatorTest" time="0.016"/>
+  <testcase name="testValidDatacenter()" classname="com.sshmanager.model.ModelValidatorTest" time="0.003"/>
+  <testcase name="testDuplicateDatacenterName()" classname="com.sshmanager.model.ModelValidatorTest" time="0.002"/>
+  <testcase name="testInvalidDatacenterName()" classname="com.sshmanager.model.ModelValidatorTest" time="0.002"/>
+  <testcase name="testInvalidConnectionMappedPort()" classname="com.sshmanager.model.ModelValidatorTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
